@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Categorías</title>
+  </head>
+  <body>
+    <h1>Lista de Categorías</h1>
+    <ul>
+      
+    </ul>
+    <h1>Lista de Productos</h1>
+    <ul>
+      <!-- Aquí iteramos sobre las categorías recibidas desde el controlador -->
+      <% products.forEach(product => { %>
+      <li><%= product.name_product %></li>
+      <!-- Suponiendo que cada categoría tiene un atributo 'name' -->
+      <% }); %>
+    </ul>
+  </body>
+</html>
