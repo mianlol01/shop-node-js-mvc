@@ -1,7 +1,7 @@
 const categoryModel = require('../models/categoryModel');
 const productModel = require('../models/productModel');
 
-async function listCategories(req, res) {
+async function home(req, res) {
     try {
         const categories = await categoryModel.getCategories();
         const products = await productModel.getProducts();
@@ -14,5 +14,5 @@ async function listCategories(req, res) {
 }
 
 module.exports = {
-    listCategories
+    home
 }

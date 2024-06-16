@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <!-- Include Navbar -->
+      <%- include('partials/navbar') %>
+      <div class="section grey lighten-5">
+        <div class="row">
+          <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img
+                  src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
+                />
+              </div>
+
+              <div class="card-content">
+                <p class="center card-title"><%= product[0].name_product %></h2>
+                <p>
+                  I am a very simple card. I am good at containing small bits of
+                  information. I am convenient because I require little markup
+                  to use effectively.
+                </p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

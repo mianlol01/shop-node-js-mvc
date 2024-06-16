@@ -16,50 +16,30 @@
   </head>
   <body>
     <div class="container">
-      <!-- Dropdown Structure -->
-      <ul id="dropdown1" class="dropdown-content">
-        <% categories.forEach(category => { %>
-        <li><a href="#!"><%= category.name_category %></a></li>
-        <% }); %>
-      </ul>
-      <nav>
-        <div class="nav-wrapper">
-          <ul>
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <!-- Dropdown Trigger -->
-            <li>
-              <a class="dropdown-trigger" href="#!" data-target="dropdown1"
-                >Categorías<i class="material-icons right"
-                  >arrow_drop_down</i
-                ></a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <!-- Include Navbar -->
+      <%- include('partials/navbar') %>
       <h2>Lista de Productos</h2>
-      <div class="section">
+      <div class="section grey lighten-5">
         <div class="row">
           <% products.forEach(product => { %>
-
           <div class="col s12 m3">
             <div class="card">
-              <div class="card-image">
-                <img
-                  src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
-                />
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p><%= product.name_product %></p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
+              <a href="Producto/<%= product.id_product%>">
+                <div class="card-image">
+                  <img
+                    src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
+                  />
+                  <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                  <p class="center"><%= product.name_product %></p>
+                </div>
+              </a>
+              <div class="card-action center">
+                <a href="#" class="btn">Agregar al carrito</a>
               </div>
             </div>
           </div>
-
           <% }); %>
         </div>
       </div>
