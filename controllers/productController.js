@@ -24,8 +24,25 @@ async function sendProduct(req, res) {
     res.status(500).send("Error obteniendo productos");
   }
 }
+async function sendProductByCategory(req, res) {
+  try {
+    const id = parseInt(req.params.id, 10);
+    if (isNaN(id)) {
+      return res.status(400).send({ error: "Invalid category ID" });
+    }
+    const categories = await categoryModel.getCategories();
+    const products = await productModel.getProductByCategory(id);
+    const category = await categoryModel.getCategoryById(id);
+    console.log(category);
+    console.log(products);
+    res.render("category", { products, categories, category });
+  } catch (error) {
+    res.status(500).send("Error obteniendo productos");
+  }
+}
 
 module.exports = {
   listProducts,
   sendProduct,
+  sendProductByCategory,
 };

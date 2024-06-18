@@ -30,3 +30,52 @@ INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Lap
 INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Novel', 100, 2, 19.99);
 INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('T-shirt', 200, 3, 9.99);
 INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Headphones', 75, 1, 49.99);
+-- Electronics
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Smartwatch', 40, 1, 199.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Tablet', 25, 1, 499.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Camera', 15, 1, 299.99);
+
+-- Books
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Science Fiction Book', 80, 2, 24.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('History Book', 60, 2, 29.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('children''s book', 120, 2, 14.99);
+
+-- Clothing
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Jeans', 150, 3, 39.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Jacket', 90, 3, 59.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Sneakers', 110, 3, 49.99);
+
+-- Home & Kitchen
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Blender', 50, 4, 89.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Coffee Maker', 70, 4, 79.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Cookware Set', 30, 4, 129.99);
+
+-- Sports & Outdoors
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Yoga Mat', 60, 5, 19.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Dumbbells', 40, 5, 39.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Bicycle', 20, 5, 299.99);
+
+-- Toys & Games
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Board Game', 50, 6, 29.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Action Figure', 70, 6, 19.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Puzzle', 90, 6, 14.99);
+
+-- Health & Personal Care
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Vitamins', 100, 7, 24.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Shampoo', 80, 7, 9.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Toothbrush', 120, 7, 4.99);
+
+-- Automotive
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Car Wax', 50, 8, 14.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Tire Inflator', 30, 8, 39.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Car Cover', 20, 8, 59.99);
+
+-- Beauty
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Lipstick', 70, 9, 19.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Foundation', 60, 9, 29.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Perfume', 40, 9, 49.99);
+
+-- Groceries
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Organic Apples', 100, 10, 2.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Almond Milk', 80, 10, 3.99);
+INSERT INTO Product (name_product, stock, category_producto, price) VALUES ('Pasta', 150, 10, 1.99);

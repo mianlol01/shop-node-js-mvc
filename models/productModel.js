@@ -22,7 +22,21 @@ async function getProduct(id) {
     throw error;
   }
 }
+
+async function getProductByCategory(id) {
+  try {
+    const request = new sql.Request();
+    request.input('id', sql.Int, id);
+    const result = await request.query('SELECT * FROM Product WHERE category_producto = @id');
+    console.log(result);
+    return result.recordset;
+  } catch (error) {
+    console.error("Error ejecutando consulta:", error);
+    throw error;
+  }
+}
 module.exports = {
   getProducts,
   getProduct,
+  getProductByCategory,
 };

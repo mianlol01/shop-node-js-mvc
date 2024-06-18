@@ -3,6 +3,7 @@ const express = require("express");
 const { connectDB } = require("./config/dbConfig");
 const home = require("./routes/home");
 const product = require("./routes/product");
+const categories = require("./routes/category");
 const app = express();
 
 // Conectar a la base de datos
@@ -15,6 +16,7 @@ app.set("views", "./views");
 // Usar rutas
 app.use("/", home);
 app.use("/Producto", product);
+app.use("/Categoria", categories);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

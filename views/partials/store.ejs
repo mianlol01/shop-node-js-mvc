@@ -1,0 +1,24 @@
+<div class="section grey lighten-5">
+  <div class="row">
+    <% products.forEach(product => { %>
+    <div class="col s12 m3">
+      <div class="card">
+        <a href="/Producto/<%= product.id_product%>">
+          <div class="card-image">
+            <img
+              src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png"
+            />
+            <span class="card-title">Card Title</span>
+          </div>
+          <div class="card-content">
+            <p class="center"><%= product.name_product %></p>
+          </div>
+        </a>
+        <div class="card-action center">
+          <a href="#" class="btn">Agregar al carrito</a>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
