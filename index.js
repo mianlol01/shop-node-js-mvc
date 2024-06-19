@@ -4,6 +4,7 @@ const { connectDB } = require("./config/dbConfig");
 const home = require("./routes/home");
 const product = require("./routes/product");
 const categories = require("./routes/category");
+const catalog = require("./routes/catalog");
 const app = express();
 
 // Conectar a la base de datos
@@ -17,6 +18,7 @@ app.set("views", "./views");
 app.use("/", home);
 app.use("/Producto", product);
 app.use("/Categoria", categories);
+app.use("/Productos", catalog);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

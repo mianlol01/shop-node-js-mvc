@@ -40,9 +40,31 @@ async function sendProductByCategory(req, res) {
     res.status(500).send("Error obteniendo productos");
   }
 }
+async function sendProductByIndex(req, res) {
+  try {
+    const index = parseInt(req.params.index, 10);
+    if (isNaN(index)) {
+      return res.status(400).send({ error: "Invalid category ID" });
+    }
+    const categories = await categoryModel.getCategories();
+    const products = await productModel.getProductByIndex(index);
+    const total = await productModel.getTotalProducts();
+    const cantidadIndices = Math.ceil(total[0].total / 10);
+    const indices = [];
+    for (let i = 1; i <= cantidadIndices; i++) {
+      indices.push({ indice: i });
+    }
+    console.log(total[0].total);
+    console.log(index);
+    res.render("page", { products, categories, total, indices, index });
+  } catch (error) {
+    res.status(500).send("Error obteniendo productos");
+  }
+}
 
 module.exports = {
   listProducts,
   sendProduct,
   sendProductByCategory,
+  sendProductByIndex,
 };

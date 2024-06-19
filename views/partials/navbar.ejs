@@ -1,14 +1,18 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
   <% categories.forEach(category => { %>
-  <li><a href="/Categoria/<%= category.id_category%>"><%= category.name_category %></a></li>
+  <li>
+    <a href="/Categoria/<%= category.id_category%>"
+      ><%= category.name_category %></a
+    >
+  </li>
   <% }); %>
 </ul>
 <nav>
   <div class="nav-wrapper">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="badges.html">Components</a></li>
+      <li><a href="/Productos/Page/1">Productos</a></li>
       <!-- Dropdown Trigger -->
       <li>
         <a class="dropdown-trigger" href="#!" data-target="dropdown1"

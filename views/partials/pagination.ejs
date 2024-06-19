@@ -1,0 +1,15 @@
+<ul class="pagination center">
+  <li class="<%= (index === 1) ? 'disabled' : 'waves-effect' %>">
+    <a href="<%= (index === 1) ? '' : index - 1 %>"
+      ><i class="material-icons">chevron_left</i></a
+    >
+  </li>
+  <% indices.forEach(indice => { %>
+  <li class="<%= (index === indice.indice) ? 'active' : 'waves-effect' %>">
+    <a href="<%= indice.indice%>"><%= indice.indice%></a>
+  </li>
+  <% });%>
+  <li class="<%= (index === indices.length) ? 'disabled' : 'waves-effect' %>">
+    <a href="<%= (index === indices.length) ? '' : index + 1 %>"><i class="material-icons">chevron_right</i></a>
+  </li>
+</ul>
