@@ -4,7 +4,6 @@ const categoryModel = require("../models/categoryModel");
 async function listProducts(req, res) {
   try {
     const products = await productModel.getProducts();
-    console.log(products);
     res.render("index", { products });
   } catch (error) {
     res.status(500).send("Error obteniendo productos");
@@ -18,7 +17,6 @@ async function sendProduct(req, res) {
     }
     const categories = await categoryModel.getCategories();
     const product = await productModel.getProduct(id);
-    console.log(product);
     res.render("product", { product, categories });
   } catch (error) {
     res.status(500).send("Error obteniendo productos");
@@ -33,8 +31,6 @@ async function sendProductByCategory(req, res) {
     const categories = await categoryModel.getCategories();
     const products = await productModel.getProductByCategory(id);
     const category = await categoryModel.getCategoryById(id);
-    console.log(category);
-    console.log(products);
     res.render("category", { products, categories, category });
   } catch (error) {
     res.status(500).send("Error obteniendo productos");
@@ -54,8 +50,6 @@ async function sendProductByIndex(req, res) {
     for (let i = 1; i <= cantidadIndices; i++) {
       indices.push({ indice: i });
     }
-    console.log(total[0].total);
-    console.log(index);
     res.render("page", { products, categories, total, indices, index });
   } catch (error) {
     res.status(500).send("Error obteniendo productos");

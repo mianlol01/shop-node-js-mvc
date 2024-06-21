@@ -14,7 +14,19 @@
           </div>
         </a>
         <div class="card-action center">
-          <a href="#" class="btn-small">Comprar</a>
+          <form action="/Cart" method="POST">
+            <input
+              type="hidden"
+              name="productId"
+              value="<%= product.id_product %>"
+            />
+            <input
+              type="hidden"
+              name="view"
+              value="<%= product.id_product %>"
+            />
+            <button class="btn-small" type="submit">Comprar</button>
+          </form>
         </div>
       </div>
     </div>

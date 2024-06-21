@@ -32,7 +32,6 @@ async function getProductByCategory(id) {
     const result = await request.query(
       "SELECT * FROM Product WHERE category_producto = @id"
     );
-    console.log(result);
     return result.recordset;
   } catch (error) {
     console.error("Error ejecutando consulta:", error);
