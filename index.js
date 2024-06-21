@@ -11,10 +11,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 
-// Conectar a la base de datos
 connectDB();
 
-// Configurar vistas
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
@@ -25,6 +23,11 @@ app.use(
     secret: "my secret",
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24, // 1 día
+      httpOnly: true, // Asegura que la cookie solo sea accesible desde el servidor
+      secure: process.env.NODE_ENV === "production", // Asegura que la cookie solo se envíe a través de HTTPS en producción
+    },
   })
 );
 
