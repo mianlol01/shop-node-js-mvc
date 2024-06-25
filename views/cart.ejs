@@ -3,16 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <title><%= pageTitle %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      .custom-flex {
+        display: inline-flex;
+      }
+    </style>
   </head>
   <body>
-    <h1>Your Cart</h1>
-    <ul>
-      <% products.forEach(cartItem => { %>
-      <li>
-        <%= cartItem.name %> - $<%= cartItem.price %> x <%=
-        cartItem.quantity %>
-      </li>
-      <% }) %>
-    </ul>
+    <div class="container">
+      <%- include('partials/navbar') %>
+      <h1>Your Cart</h1>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Importe</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach(cartItem => { %>
+          <tr>
+            <td><%= cartItem.name %></td>
+            <td><%= cartItem.quantity %></td>
+            <td>$<%= cartItem.price %></td>
+            <td>$ <%= cartItem.import %></td>
+            <td>
+              <form method="post" action="Cart/DeleteCart">
+                <input
+                  type="hidden"
+                  name="productId"
+                  value="<%= cartItem.id %>"
+                />
+                <button class="btn custom-flex" type="submit">
+                  Eliminar<i class="material-icons">delete</i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <p>Total: $<%= totalImport%></p>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $(".dropdown-trigger").dropdown();
+        });
+      </script>
+    </div>
   </body>
 </html>
