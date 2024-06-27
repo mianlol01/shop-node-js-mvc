@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <form class="col s12" method="post" action="SignUp">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="username" name="username" type="text" class="validate" required />
+              <label class="active" for="first_name2">Usuario</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="email" name="email" type="email" class="validate" required />
+              <label class="active" for="first_name2">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="password" name="password" type="password" class="validate" />
+              <label class="active" for="first_name2">Contraseña</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="name" name="name" type="text" class="validate" />
+              <label class="active" for="first_name2">Nombre</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="lastname" name="lastname" type="text" class="validate" />
+              <label class="active" for="first_name2">Apellido</label>
+            </div>
+          </div>
+          <button class="btn" type="submit">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

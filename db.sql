@@ -14,6 +14,30 @@ CREATE TABLE Product (
     price DECIMAL(18, 2) NOT NULL
 );
 
+CREATE TABLE Users (
+	id_user INT PRIMARY KEY IDENTITY NOT NULL,
+	username NVARCHAR(100) UNIQUE NOT NULL,
+	email NVARCHAR(100) UNIQUE NOT NULL,
+	password_user NVARCHAR(100) UNIQUE NOT NULL,
+	name_user NVARCHAR(100) NOT NULL,
+	lastname_user NVARCHAR(100) NOT NULL,
+	rol TINYINT NOT NULL DEFAULT 1 CHECK (rol IN (0, 1))
+);
+
+CREATE PROCEDURE USP_LOGIN
+    @usr NVARCHAR(45),
+    @pas NVARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT *
+    FROM Users
+    WHERE username = @usr
+      AND password_user = @pas;
+END;
+GO
+
 INSERT INTO Category (name_category) VALUES ('Electronics');
 INSERT INTO Category (name_category) VALUES ('Books');
 INSERT INTO Category (name_category) VALUES ('Clothing');

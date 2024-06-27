@@ -1,15 +1,17 @@
 require("dotenv").config();
 const express = require("express");
 const { connectDB } = require("./config/dbConfig");
+const app = express();
+const path = require("path");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+
 const home = require("./routes/home");
 const product = require("./routes/product");
 const categories = require("./routes/category");
 const catalog = require("./routes/catalog");
 const cart = require("./routes/cart");
-const app = express();
-const path = require("path");
-const bodyParser = require("body-parser");
-const session = require("express-session");
+const user = require("./routes/user");
 
 connectDB();
 
@@ -31,12 +33,13 @@ app.use(
   })
 );
 
-// Usar rutas
+// Rutas
 app.use("/", home);
 app.use("/Producto", product);
 app.use("/Categoria", categories);
 app.use("/Productos", catalog);
 app.use("/Cart", cart);
+app.use("/User", user);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
