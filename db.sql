@@ -38,6 +38,19 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE FindUser
+    @username NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @user NVARCHAR(50);
+    SET @user = @username;
+
+    SELECT username
+    FROM Users 
+    WHERE username = @user;
+END;
+GO
+
 INSERT INTO Category (name_category) VALUES ('Electronics');
 INSERT INTO Category (name_category) VALUES ('Books');
 INSERT INTO Category (name_category) VALUES ('Clothing');

@@ -4,6 +4,7 @@ const userConstroller = require("../controllers/userConstroller");
 
 router.get("/Login", userConstroller.getUser);
 router.post("/Login", userConstroller.postLogin);
-router.post("/SignUp", userConstroller.postUser);
+router.get("/SignUp", userConstroller.getSignup);
+router.post("/SignUp", userConstroller.postSignup);
 
 module.exports = router;
