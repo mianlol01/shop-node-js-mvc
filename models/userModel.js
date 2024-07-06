@@ -3,7 +3,6 @@ const { sql } = require("../config/dbConfig");
 async function signupUser(user) {
   try {
     const request = new sql.Request();
-    console.log(user);
     await request
       .input("username", sql.NVarChar(100), user.username)
       .input("email", sql.NVarChar(100), user.email)
@@ -42,7 +41,6 @@ async function findUser(username) {
 
     const request = new sql.Request();
     const result = await request.query("EXEC FindUser " + username);
-    console.log(result.recordset);
     if (result.recordset.length == 1) {
       return -1;
     }

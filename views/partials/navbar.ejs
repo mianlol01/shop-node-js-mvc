@@ -27,7 +27,13 @@
           >Categorías<i class="material-icons right">arrow_drop_down</i></a
         >
       </li>
-      <li><a href="/User/Login">Iniciar Sesión</a></li>
+      <li>
+        <% if (username != null) { %>
+        <a href="#">Hola, <%= username %>!</a>
+        <% } else { %>
+        <a href="/User/Login">Iniciar Sesión</a>
+        <% } %>
+      </li>
     </ul>
   </div>
 </nav>

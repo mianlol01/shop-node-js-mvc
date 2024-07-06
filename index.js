@@ -33,6 +33,11 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  res.locals.username = req.session.user ? req.session.user.username : null;
+  next();
+});
+
 // Rutas
 app.use("/", home);
 app.use("/Producto", product);

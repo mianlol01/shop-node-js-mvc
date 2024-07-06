@@ -11,7 +11,7 @@ async function getSignup(req, res) {
 async function postSignup(req, res) {
   try {
     const { username, email, password, name, lastname } = req.body;
-    const user = {
+    const usuario = {
       username: username,
       email: email,
       password: password,
@@ -19,9 +19,7 @@ async function postSignup(req, res) {
       lastname: lastname,
     };
     let mensaje;
-    const userValidation = await userModel.findUser(user.username);
-    console.log(user.username);
-    console.log(userValidation);
+    const userValidation = await userModel.findUser(usuario.username);
     if (userValidation == -1) {
       mensaje = `
         <script>
@@ -35,16 +33,21 @@ async function postSignup(req, res) {
       });
     </script>
         `;
-      return res.render("signup", {mensaje});
+      return res.render("signup", { mensaje });
     }
-    await userModel.signupUser(user);
-    res.render("acount", { user });
+    req.session.user = usuario;
+    res.locals.username = req.session.user.username;
+    await userModel.signupUser(usuario);
+    res.render("account", { usuario });
   } catch (error) {
     res.status(500).send("Error registrando usuario");
   }
 }
 
 async function getUser(req, res) {
+  if (req.session.user != null) {
+    return res.redirect('/');
+  }
   try {
     res.render("login");
   } catch (error) {
@@ -76,7 +79,9 @@ async function postLogin(req, res) {
       return res.render("login", { mensaje });
     }
     req.session.user = usuario;
-    return res.render("account", { usuario });
+    res.locals.username = req.session.user.username;
+    console.log(res.locals.username + " postLogin");
+    return res.redirect("/");
   } catch (error) {
     return res.status(500).send("Error iniciando sesión");
   }

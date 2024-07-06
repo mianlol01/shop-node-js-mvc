@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/login.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -15,64 +16,105 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
-  <body>
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <form class="col s12" method="post" action="SignUp">
-            <div class="row">
-              <div class="input-field col s6">
-                <input
-                  id="username"
-                  name="username"
-                  type="text"
-                  class="validate"
-                  required
-                />
-                <label class="active" for="first_name2">Usuario</label>
-              </div>
-              <div class="input-field col s6">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  class="validate"
-                  required
-                />
-                <label class="active" for="first_name2">Email</label>
-              </div>
+  <body ng-app="mainModule" ng-controller="mainController">
+    <div id="login-page" class="row">
+      <div class="col s12 z-depth-6 card-panel">
+        <form class="login-form" method="post" action="SignUp">
+          <div class="row"></div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">person</i>
+              <input
+                class="validate"
+                id="username"
+                name="username"
+                type="text"
+                required
+              />
+              <label for="username" data-error="wrong" data-success="right"
+                >Username</label
+              >
             </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  class="validate"
-                />
-                <label class="active" for="first_name2">Contraseña</label>
-              </div>
-              <div class="input-field col s6">
-                <input id="name" name="name" type="text" class="validate" />
-                <label class="active" for="first_name2">Nombre</label>
-              </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input
+                class="validate"
+                id="email"
+                name="email"
+                type="email"
+                required
+              />
+              <label for="email" data-error="wrong" data-success="right"
+                >Email</label
+              >
             </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <input
-                  id="lastname"
-                  name="lastname"
-                  type="text"
-                  class="validate"
-                />
-                <label class="active" for="first_name2">Apellido</label>
-              </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">lock_outline</i>
+              <input id="password" type="password" name="password" required />
+              <label for="password">Password</label>
             </div>
-            <button class="btn" type="submit">Registrar</button>
-          </form>
-        </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">N</i>
+              <input
+                class="validate"
+                id="name"
+                name="name"
+                type="text"
+                required
+              />
+              <label for="name" data-error="wrong" data-success="right"
+                >Name</label
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">L</i>
+              <input
+                class="validate"
+                id="lastname"
+                name="lastname"
+                type="text"
+                required
+              />
+              <label for="lastname" data-error="wrong" data-success="right"
+                >Lastname</label
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button
+                class="btn waves-effect waves-light col s12"
+                type="submit"
+              >
+                SignUp
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 m6 l6">
+              <p class="margin medium-small">
+                <a href="/User/SignUp">Register Now!</a>
+              </p>
+            </div>
+            <div class="input-field col s6 m6 l6">
+              <p class="margin right-align medium-small">
+                <a href="#">Forgot password?</a>
+              </p>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <% if (typeof mensaje !== 'undefined' && mensaje) { %> <%-mensaje%> <% } %>
   </body>
 </html>
